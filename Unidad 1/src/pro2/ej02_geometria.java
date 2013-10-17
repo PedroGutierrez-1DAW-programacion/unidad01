@@ -13,10 +13,10 @@ import java.util.Scanner;
 public class ej02_geometria {
 	
 	static String[] funciones = new String[7];
+	static Scanner teclado = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		int s, s1, s2, s3, s4;
-		Scanner teclado = new Scanner(System.in);
 		
 		funciones[0] = "Perimetro de Rectángulo";
 		funciones[1] = "Área de Rectángulo";
@@ -34,62 +34,49 @@ public class ej02_geometria {
 		System.out.println("-------------------------\n" + funciones[s]);
 		switch(s){
 			case 0:
-				System.out.println("Ancho:");
-				s1 = teclado.nextInt();
-				System.out.println("Alto:");
-				s2 = teclado.nextInt();
+				s1 = pedirDato("Ancho:");
+				s2 = pedirDato("Alto:");
 				System.out.print(funciones[s]);
 				System.out.print(" [" + s1 + ", " + s2 + "] = ");
 				System.out.print(perimetoRectangulo(s1, s2));
 				break;
 			case 1:
-				System.out.println("Ancho:");
-				s1 = teclado.nextInt();
-				System.out.println("Alto:");
-				s2 = teclado.nextInt();
+				s1 = pedirDato("Ancho:");
+				s2 = pedirDato("Alto:");
 				System.out.print(funciones[s]);
 				System.out.print(" [" + s1 + ", " + s2 + "] = ");
 				System.out.print(areaRectangulo(s1, s2));
 				break;
 			case 2:
-				System.out.println("Radio:");
-				s1 = teclado.nextInt();
+				s1 = pedirDato("Radio:");
 				System.out.print(funciones[s]);
 				System.out.print(" [" + s1 + "] = ");
 				System.out.print(perimetroCirculo(s1));
 				break;
 			case 3:
-				System.out.println("Radio:");
-				s1 = teclado.nextInt();
+				s1 = pedirDato("Radio:");
 				System.out.print(funciones[s]);
 				System.out.print(" [" + s1 + "] = ");
 				System.out.print(areaCirculo(s1));
 				break;
 			case 4:
-				System.out.println("Radio:");
-				s1 = teclado.nextInt();
+				s1 = pedirDato("Radio:");
 				System.out.print(funciones[s]);
 				System.out.print(" [" + s1 + "] = ");
 				System.out.print(volumenEsfera(s1));
 				break;
 			case 5:
-				System.out.println("Coordenada X1:");
-				s1 = teclado.nextInt();
-				System.out.println("Coordenada Y1:");
-				s2 = teclado.nextInt();
-				System.out.println("Coordenada X2:");
-				s3 = teclado.nextInt();
-				System.out.println("Coordenada Y2:");
-				s4 = teclado.nextInt();
+				s1 = pedirDato("Coordenada X1:");
+				s2 = pedirDato("Coordenada Y1:");
+				s3 = pedirDato("Coordenada X2:");
+				s4 = pedirDato("Coordenada Y2:");
 				System.out.print(funciones[s]);
 				System.out.print(" [(" + s1 + ", " + s2 + "), (" + s3 + ", " + s4 +")] = ");
 				System.out.print(areaRectanguloCoords(s1, s2, s3, s4));
 				break;
 			case 6:
-				System.out.println("Cateto 1:");
-				s1 = teclado.nextInt();
-				System.out.println("Cateto 2:");
-				s2 = teclado.nextInt();
+				s1 = pedirDato("Cateto 1:");
+				s2 = pedirDato("Cateto 2:");
 				System.out.print(funciones[s]);
 				System.out.print(" [" + s1 + ", " + s2 + "] = ");
 				System.out.print(hipotenusaTriangulo(s1, s2));
@@ -98,6 +85,10 @@ public class ej02_geometria {
 		}
 		teclado.close();
 		
+	}
+	public static int pedirDato(String message){
+		System.out.println(message);
+		return teclado.nextInt();
 	}
 	public static int perimetoRectangulo(int w, int h){
 		return (2 * w) + (2 * h);
