@@ -6,7 +6,7 @@ public class ej03_velocidad {
 
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
-		int MB, Mbps, time;
+		double MB, Mbps, time;
 		
 		System.out.println("Tamaño de archivo (MB):");
 		MB = teclado.nextInt() * 8; // Conversión Bit / Byte
