@@ -11,11 +11,13 @@ package pro2;
 public class ej02_geometria {
 
 	public static void main(String[] args) {
-		System.out.println( perimetoRectangulo(5, 10) );
-		System.out.println( areaRectangulo(5, 10) );
-		System.out.println( perimetroCirculo(6) );
-		System.out.println( areaCirculo(7) );
-		System.out.println( volumenEsfera(20) );
+		System.out.println( "perimetoRectangulo:		" +	perimetoRectangulo(5, 10) );
+		System.out.println( "areaRectangulo:			" + areaRectangulo(5, 10) );
+		System.out.println( "perimetroCirculo:		" + perimetroCirculo(6) );
+		System.out.println( "areaCirculo:			" + areaCirculo(7) );
+		System.out.println( "volumenEsfera:			" + volumenEsfera(20) );
+		System.out.println( "areaRectanguloCoords:		" + areaRectanguloCoords(5, 5, 10, 15) );
+		System.out.println( "hipotenusaTriangulo:		" + hipotenusaTriangulo(3, 4) );
 	}
 	public static int perimetoRectangulo(int w, int h){
 		return (2 * w) + (2 * h);
@@ -32,7 +34,17 @@ public class ej02_geometria {
 		return Math.pow(r, 2) * Math.PI;
 	}
 	public static double volumenEsfera(int r){
-		// v = 3/4*PI * r^3
+		// v = 4/3*PI * r^3
 		return (4.0f / 3.0f) * Math.PI * Math.pow(r, 3);
+	}
+	public static int areaRectanguloCoords(int x1, int y1, int x2, int y2){
+		int w, h;
+		w = x2 - x1;
+		h = y2 - y1;
+		return (2 * w) + (2 * h);
+	}
+	public static double hipotenusaTriangulo(int c1, int c2){
+		// h^2 = c1^2 + c2^2 
+		return Math.sqrt(Math.pow(c1, 2) + Math.pow(c2, 2));
 	}
 }
